@@ -15,7 +15,7 @@ struct EmailProviders {
                               "@hotmail.com", "@outlook.com",
                               "@yandex.ru", "@mail.ru",
                               "@icloud.com", "@rambler.ru",
-                              "@inbox.com", "zoho.com"]
+                              "@inbox.com", "@zoho.com"]
         return emailProviders
     }
 }

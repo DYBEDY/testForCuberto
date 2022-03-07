@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cuberto" translatesAutoresizingMaskIntoConstraints="NO" id="O55-1L-ije">
-                                <rect key="frame" x="87.5" y="30" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="20" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="3nX-xI-Wy3"/>
                                     <constraint firstAttribute="width" constant="200" id="flq-Um-VSh"/>
@@ -30,7 +30,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="mnS-L1-Ail"/>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="wyX-Gi-g9E">
-                                <rect key="frame" x="20" y="280" width="335" height="78"/>
+                                <rect key="frame" x="20" y="250" width="335" height="78"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXv-hP-AD3">
                                         <rect key="frame" x="148.5" y="0.0" width="38.5" height="18"/>
@@ -53,10 +53,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.20689427852630615" green="0.56440949440002441" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="O55-1L-ije" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="BDr-U3-vEh"/>
+                            <constraint firstItem="O55-1L-ije" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="BDr-U3-vEh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wyX-Gi-g9E" secondAttribute="trailing" constant="20" id="MzR-LQ-pN8"/>
                             <constraint firstItem="O55-1L-ije" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f8n-2c-mu3"/>
-                            <constraint firstItem="wyX-Gi-g9E" firstAttribute="top" secondItem="O55-1L-ije" secondAttribute="bottom" constant="50" id="hqb-Qa-buw"/>
+                            <constraint firstItem="wyX-Gi-g9E" firstAttribute="top" secondItem="O55-1L-ije" secondAttribute="bottom" constant="30" id="hqb-Qa-buw"/>
                             <constraint firstItem="wyX-Gi-g9E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pdD-lr-2ub"/>
                         </constraints>
                         <variation key="default">

@@ -17,6 +17,7 @@
 		0626777D27CEAD4700F21D45 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0626777C27CEAD4700F21D45 /* NetworkManager.swift */; };
 		0626778027CFF33B00F21D45 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0626777F27CFF33B00F21D45 /* Utilities.swift */; };
 		06F94F2F27D3BF6B00C0E75B /* EmailProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F94F2E27D3BF6B00C0E75B /* EmailProviders.swift */; };
+		06F94F3527D6722300C0E75B /* Extension + TextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F94F3427D6722300C0E75B /* Extension + TextFiled.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0626777C27CEAD4700F21D45 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0626777F27CFF33B00F21D45 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		06F94F2E27D3BF6B00C0E75B /* EmailProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailProviders.swift; sourceTree = "<group>"; };
+		06F94F3427D6722300C0E75B /* Extension + TextFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + TextFiled.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,17 +66,11 @@
 		0626776527CEA98000F21D45 /* testForCuberto */ = {
 			isa = PBXGroup;
 			children = (
-				0626776627CEA98000F21D45 /* AppDelegate.swift */,
-				0626776827CEA98000F21D45 /* SceneDelegate.swift */,
-				0626776A27CEA98000F21D45 /* LoginViewController.swift */,
-				0626777C27CEAD4700F21D45 /* NetworkManager.swift */,
-				06F94F2E27D3BF6B00C0E75B /* EmailProviders.swift */,
-				0626777F27CFF33B00F21D45 /* Utilities.swift */,
+				06F94F3027D6715500C0E75B /* ViewControllers */,
+				06F94F3627D672DA00C0E75B /* Extensions */,
+				06F94F3127D6716300C0E75B /* NetworkManager */,
 				0626777E27CEDFB700F21D45 /* Models */,
-				0626776C27CEA98000F21D45 /* Main.storyboard */,
-				0626776F27CEA98100F21D45 /* Assets.xcassets */,
-				0626777127CEA98100F21D45 /* LaunchScreen.storyboard */,
-				0626777427CEA98100F21D45 /* Info.plist */,
+				06F94F3327D6719400C0E75B /* SupportingFiles */,
 			);
 			path = testForCuberto;
 			sourceTree = "<group>";
@@ -83,8 +79,55 @@
 			isa = PBXGroup;
 			children = (
 				0626777A27CEAC1E00F21D45 /* Verification.swift */,
+				06F94F2E27D3BF6B00C0E75B /* EmailProviders.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		06F94F3027D6715500C0E75B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0626776A27CEA98000F21D45 /* LoginViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		06F94F3127D6716300C0E75B /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				0626777C27CEAD4700F21D45 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		06F94F3227D6717300C0E75B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0626777F27CFF33B00F21D45 /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		06F94F3327D6719400C0E75B /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0626776627CEA98000F21D45 /* AppDelegate.swift */,
+				0626776827CEA98000F21D45 /* SceneDelegate.swift */,
+				06F94F3227D6717300C0E75B /* Utilities */,
+				0626776C27CEA98000F21D45 /* Main.storyboard */,
+				0626776F27CEA98100F21D45 /* Assets.xcassets */,
+				0626777127CEA98100F21D45 /* LaunchScreen.storyboard */,
+				0626777427CEA98100F21D45 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		06F94F3627D672DA00C0E75B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				06F94F3427D6722300C0E75B /* Extension + TextFiled.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +208,7 @@
 				0626777D27CEAD4700F21D45 /* NetworkManager.swift in Sources */,
 				0626776727CEA98000F21D45 /* AppDelegate.swift in Sources */,
 				0626776927CEA98000F21D45 /* SceneDelegate.swift in Sources */,
+				06F94F3527D6722300C0E75B /* Extension + TextFiled.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,10 +359,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3HS3UN4N9J;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = testForCuberto/Info.plist;
+				INFOPLIST_FILE = testForCuberto/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -344,10 +389,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3HS3UN4N9J;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = testForCuberto/Info.plist;
+				INFOPLIST_FILE = testForCuberto/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
