@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     
     private var verification: (Verification?)
     private let domains = EmailProviders.getProviders()
-
+    private var start = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,21 +148,21 @@ extension LoginViewController {
     func showDomains() {
         emailTextField.inputAccessoryView = emailBar
         emailBar.isHidden = true
-        var lastX: CGFloat = 8.0
-        for domain in domains {
-            let button = UIButton()
-            button.setTitle(domain, for: .normal)
-            button.setTitleColor(UIColor(red: 1/255, green: 1/255, blue: 1/255, alpha: 1.0), for: .normal)
-            button.addTarget(self, action: #selector(appendEmailProvider(_:)), for: .touchUpInside)
-            button.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: .light)
-            button.sizeToFit()
-            button.frame.origin = CGPoint(x: lastX, y: 4.0)
-            emailBar.addSubview(button)
-            lastX += button.frame.width + 20
-        }
+//        let lastX: CGFloat = 8.0
+//        for domain in domains {
+//            let button = UIButton()
+//            button.setTitle(domain, for: .normal)
+//            button.setTitleColor(UIColor(red: 1/255, green: 1/255, blue: 1/255, alpha: 1.0), for: .normal)
+//            button.addTarget(self, action: #selector(appendEmailProvider(_:)), for: .touchUpInside)
+//            button.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: .light)
+//            button.sizeToFit()
+//            button.frame.origin = CGPoint(x: lastX, y: 4.0)
+//            emailBar.addSubview(button)
+//            lastX += button.frame.width + 20
+//        }
 
-        emailBar.contentSize = CGSize(width: lastX, height: 32.0)
-        emailTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+//        emailBar.contentSize = CGSize(width: lastX, height: 32.0)
+//        emailTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
 
     }
 
@@ -178,17 +178,69 @@ extension LoginViewController {
 
     @objc func appendEmailProvider(_ sender: UIButton) {
 
-        if let provider = sender.title(for: .normal) {
+        if let domain = sender.title(for: .normal) {
             let text = emailTextField.text ?? ""
             let index = text.firstIndex(of: "@") ?? text.endIndex
             let begginning = text[..<index]
             let newText = String(begginning)
 
-            emailTextField.text = ("\(newText)@\(provider)")
-
+            emailTextField.text = ("\(newText)\(domain)")
+            print(domain)
         }
     }
 }
 
+extension LoginViewController {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text, let textRange = Range(range, in: text) {
+            let updatedText = text.replacingCharacters(in: textRange, with: string)
+            
+            start = (string == "@" ? range.location : start)
+
+            var text = String()
+            
+            if range.location > start {
+            let startIndex = updatedText.index(updatedText.startIndex, offsetBy: start)
+            let endIndex = updatedText.index(before: updatedText.endIndex)
+                let textTest = updatedText[startIndex...endIndex]
+                text = String(textTest)
+            
+            
+            }
+
+            
+            var lastX: CGFloat = 8.0
+            
+            for domain in domains {
+                let button = UIButton()
+                button.setTitle(domain, for: .normal)
+                button.setTitleColor(UIColor(red: 1/255, green: 1/255, blue: 1/255, alpha: 1.0), for: .normal)
+                button.addTarget(self, action: #selector(appendEmailProvider(_:)), for: .touchUpInside)
+                button.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: .light)
+                button.sizeToFit()
+                button.frame.origin = CGPoint(x: lastX, y: 4.0)
+                emailBar.addSubview(button)
+                lastX += button.frame.width + 20
+                
+                
+                
+               
+            
+                
+                
+                
+                if domain.contains(text) {
+                    print(domain)
+                }
+            }
+            
+    
+            emailBar.contentSize = CGSize(width: lastX, height: 32.0)
+            emailTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        }
+        return true
+    }
+    
 
 
+}
