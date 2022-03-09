@@ -16,22 +16,21 @@ enum NetworkError: Error {
 
 class NetworkManager {
     static let shared = NetworkManager()
-    private var apikey = "test_ad5a03b3496782395f5c2ef5ea048169f57f8d7bb4e3cedeaac0871eade6bb2d"
+    private var apikey = "live_690aef95446940d099f0afc5dba6dc9b9bfc3ef976953cfffdf83b116e551798"
 //    "live_690aef95446940d099f0afc5dba6dc9b9bfc3ef976953cfffdf83b116e551798"
 //    "test_ad5a03b3496782395f5c2ef5ea048169f57f8d7bb4e3cedeaac0871eade6bb2d"
     
     
     private init() {}
     
-
+    
     func fetch<T: Decodable>(dataType: T.Type, email: String, completion: @escaping(Result<T, NetworkError>) -> Void) {
-
+        
         guard let url = URL(
             string: "https://api.kickbox.com/v2/verify?email=\(email)&apikey=\(apikey)") else {
-        //        guard let url = URL(string: url) else {
-            completion(.failure(.invalidURL))
-            return
-        }
+                completion(.failure(.invalidURL))
+                return
+            }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
@@ -46,7 +45,9 @@ class NetworkManager {
                     completion(.success(type))
                 }
             } catch {
-                completion(.failure(.decodingError))
+                DispatchQueue.main.async {
+                    completion(.failure(.decodingError))
+                }
             }
         }.resume()
     }

@@ -83,11 +83,7 @@ extension LoginViewController {
             print(domain)
         }
     }
-    
-    
-    
-    
-    
+
 }
 
 
